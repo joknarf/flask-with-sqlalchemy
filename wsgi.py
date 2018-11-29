@@ -48,7 +48,7 @@ def product(product_id):
         if data['name'] == '':
             return '', 422
         product.name = data['name']
-        db.session.query(Product).commit()
+        db.session.commit()
         return product_schema.jsonify(product), 201
         #status.HTTP_204_NO_CONTENT
 
